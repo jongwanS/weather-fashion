@@ -1,44 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Provider } from 'react-redux';
+import styled from 'styled-components';
 import { store } from './store';
 import WeatherDisplay from './components/WeatherDisplay';
-import FashionRecommendation from './components/FashionRecommendation';
+import WeatherFashion from './components/WeatherFashion';
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
-  padding: 20px;
+  background-color: #f9f9f9;
 `;
 
-const MainContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-`;
-
-const Title = styled.h1`
-  color: #333;
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-`;
-
-function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <AppContainer>
-        <MainContent>
-          <Title>날씨 기반 패션 추천</Title>
-          <WeatherDisplay />
-          <FashionRecommendation />
-        </MainContent>
+        <WeatherDisplay />
+        <WeatherFashion />
       </AppContainer>
     </Provider>
   );
-}
+};
 
 export default App;

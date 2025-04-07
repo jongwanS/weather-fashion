@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = 'YOUR_OPENWEATHER_API_KEY'; // OpenWeather API 키를 여기에 입력하세요
-const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const BASE_URL = process.env.REACT_APP_WEATHER_API_URL;
 
 export const getWeather = async (lat: number, lon: number) => {
   try {
